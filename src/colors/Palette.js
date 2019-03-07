@@ -60,7 +60,7 @@ class Palette extends Component {
           </div>
         </div>
         <button className="generate-btn" onClick={generate}>Generate</button>
-        <button className="save-btn" onClick={savePalette}>Save Palette</button>
+        {this.props.user && <button className="save-btn" onClick={savePalette}>Save Palette</button>}
       </React.Fragment>
     )
   }

@@ -43,7 +43,11 @@ class Dashboard extends Component {
       <React.Fragment>
         <h1>Saved Palettes</h1>
         { this.state.colors.map(color => {
-          return <SavedPalette key={color.id} hex={this.parseHex(color.hex)} />
+          return <SavedPalette
+            key={color.id}
+            colorId={color.id}
+            hex={this.parseHex(color.hex)}
+            user={this.props.user} />
         })}
       </React.Fragment>
     )

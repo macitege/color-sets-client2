@@ -21,3 +21,13 @@ export const getPalettes = (token) => {
     }
   })
 }
+
+export const onDestroy = (id, token) => {
+  return axios({
+    url: apiUrl + '/colors/' + id,
+    method: 'delete',
+    headers: {
+      Authorization: 'Token token=' + token
+    }
+  })
+}
