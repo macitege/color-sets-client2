@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 
 import './Palette.scss'
 
-import { makeColors } from './generator'
+import { makeColors, prepareForAPI } from './generator'
+import { createPalette } from './api'
 
 class Palette extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
-      hex: null,
-      rgba: null
+      hex: undefined,
+      rgba: undefined,
+      hsla: undefined
     }
   }
 
@@ -28,8 +30,15 @@ class Palette extends Component {
     this.setState({ hex: { ...this.state.hex, ...updatedField } })
   }
 
+  savePalette = () => {
+    const data = prepareForAPI()
+    createPalette(data, this.props.user.token)
+      .then(console.log)
+      .catch(console.error)
+  }
+
   render () {
-    const { handleChange } = this
+    const { handleChange, generate, savePalette } = this
     const { hex } = this.state
     return (
       <React.Fragment>
@@ -50,7 +59,8 @@ class Palette extends Component {
             <input className="color-code5 code" name='color5' value={hex.color5} onChange={handleChange}/>
           </div>
         </div>
-        <button className="generate-btn" onClick={this.generate}>Generate</button>
+        <button className="generate-btn" onClick={generate}>Generate</button>
+        <button className="save-btn" onClick={savePalette}>Save Palette</button>
       </React.Fragment>
     )
   }

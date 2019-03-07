@@ -45,7 +45,9 @@ class App extends Component {
           </Alert>
         ))}
 
-        <Route exact path="/" component={Palette} />
+        <Route exact path="/" render={() => (
+          <Palette user={user} />
+        )}/>
 
         <main className="container">
           <Route path='/sign-up' render={() => (
