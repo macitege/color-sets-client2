@@ -25,7 +25,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <h2>Rainbow&#39;s B.F.F.</h2>&nbsp;&nbsp;<p>color generator</p>
+    <h2>Rainbow&#39;s B.F.F.</h2>&nbsp;&nbsp;<p> ⨳ 𝕔𝕠𝕝𝕠𝕣𝕤</p>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }
