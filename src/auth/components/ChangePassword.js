@@ -43,7 +43,7 @@ class ChangePassword extends Component {
         <label htmlFor="oldpw">Old Password</label>
         <input
           required
-          name="oldPassword"
+          name="oldpw"
           value={oldPassword}
           type="password"
           placeholder="Old Password"

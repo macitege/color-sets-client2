@@ -9,6 +9,8 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
+import Palette from './colors/Palette'
+
 import Alert from 'react-bootstrap/Alert'
 
 class App extends Component {
@@ -42,6 +44,9 @@ class App extends Component {
             </Alert.Heading>
           </Alert>
         ))}
+
+        <Route exact path="/" component={Palette} />
+
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
