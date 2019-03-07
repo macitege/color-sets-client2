@@ -47,7 +47,8 @@ class Dashboard extends Component {
             key={color.id}
             colorId={color.id}
             hex={this.parseHex(color.hex)}
-            user={this.props.user} />
+            user={this.props.user}
+            alert={this.props.alert} />
         })}
       </React.Fragment>
     )

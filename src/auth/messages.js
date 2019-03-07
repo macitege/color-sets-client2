@@ -8,5 +8,9 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password' +
-                         ' and try again.'
+                         ' and try again.',
+  saveSuccess: 'Your palette has been saved in the Dashboard.',
+  saveFail: 'Palette could NOT be saved. Check you internet connection.',
+  deleteSuccess: 'Your palette has been deleted from the Dashboard.',
+  deleteFail: 'Your palette could NOT be deleted. Check you internet connection.'
 }

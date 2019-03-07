@@ -64,7 +64,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/dashboard' render={() => (
-            <Dashboard user={user} />
+            <Dashboard user={user} alert={this.alert} />
           )} />
         </main>
       </React.Fragment>

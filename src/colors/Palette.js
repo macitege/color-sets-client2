@@ -4,6 +4,7 @@ import './Palette.scss'
 
 import { makeColors, prepareForAPI } from './generator'
 import { createPalette } from './api'
+import messages from '../auth/messages'
 
 class Palette extends Component {
   constructor (props) {
@@ -31,10 +32,11 @@ class Palette extends Component {
   }
 
   savePalette = () => {
+    const { alert } = this.props
     const data = prepareForAPI()
     createPalette(data, this.props.user.token)
-      .then(console.log)
-      .catch(console.error)
+      .then(() => alert(messages.saveSuccess, 'success'))
+      .catch(() => alert(messages.savefail, 'danger'))
   }
 
   render () {
