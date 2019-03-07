@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 
 import Palette from './colors/Palette'
+import Dashboard from './colors/Dashboard'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -46,7 +47,7 @@ class App extends Component {
         ))}
 
         <Route exact path="/" render={() => (
-          <Palette user={user} />
+          <Palette alert={this.alert} user={user} />
         )}/>
 
         <main className="container">
@@ -61,6 +62,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/dashboard' render={() => (
+            <Dashboard user={user} />
           )} />
         </main>
       </React.Fragment>
