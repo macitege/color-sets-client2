@@ -19,7 +19,8 @@
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
     "resolve": "1.6.0",
-    "url-loader": "0.6.2"
+    "url-loader": "0.6.2",
+    "snyk": "^1.161.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -27,7 +28,9 @@
     "test": "node scripts/test.js --env=jsdom",
     "make-standard": "eslint --fix ./src;exit 0",
     "nag": "eslint ./src;exit 0",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "sh scripts/deploy.sh",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -106,5 +109,6 @@
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "1.3.2"
-  }
+  },
+  "snyk": true
 }
